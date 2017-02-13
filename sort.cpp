@@ -67,8 +67,9 @@ int main()
 
    cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
-
+	if(inputs.size() == 1000000){	
 	selectionSort(inputs);
+}
 	displayData(inputs);
     return 0;
 }
