@@ -68,23 +68,22 @@ int main()
     return 0;
 }
 
-void bubbleSort(auto& Data) {
-bool swapped = true;
-int passes = 0;
-int temp;
-while (swapped) {
-	swapped = false;
-	passes++;
-	for (int i = 0; i < Data.size() -passes; i++) {
-	if ( Data[i] > Data[i + 1]) { //swap values
-	temp = Data[i];
-	Data[i] = Data[i + 1];
-	Data[i + 1] = temp;
-	swapped = true;
+void selectionSort(auto& Data) 
+{
+	int i, j, minIndex, tmp;
+for (i = 0; i < Data.size() -1; i++) 
+{
+minIndex = i;
+//find smallest in unsorted part
+for (j = i + 1; j < Data.size(); j++)
+{
+if (Data[j] < Data[minIndex])minIndex = j;
+}
+if (minIndex != i) 
+{
+	tmp = Data[i];
+	Data[i] = Data[minIndex];
+	Data[minIndex] = tmp;
 } //end if
-} //end for
-} //end while
-} //
-end function
-
-
+} //end outer loop
+} //end function
