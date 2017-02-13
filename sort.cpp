@@ -73,25 +73,28 @@ int main()
     return 0;
 }
 
-void selectionSort(auto& Data) 
+void selectionSort(auto& Data)
 {
-	int i, j, minIndex, tmp;
-for (i = 0; i < Data.size() -1; i++) 
-{
-minIndex = i;
-//find smallest in unsorted part
-for (j = i + 1; j < Data.size(); j++)
-{
-if (Data[j] < Data[minIndex])minIndex = j;
+	int passes = 0;
+	for (size_t i = 0; i < Data.size(); i++)
+	{		
+		int min = i;
+		
+	for (size_t j = i + 1; j < Data.size(); j++)
+	{
+		if (Data[j] < Data[min]){
+			min = j;
+		}
+	}
+	swap(Data[i], Data[min]);
+	passes++;
+	
+	if( passes % 20000 == 0 )
+	{
+		cout << passes << endl;
+	}
 }
-if (minIndex != i) 
-{
-	tmp = Data[i];
-	Data[i] = Data[minIndex];
-	Data[minIndex] = tmp;
-} //end if
-} //end outer loop
-} //end function
+}
 
 void displayData(auto& info)
 {
