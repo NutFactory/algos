@@ -13,6 +13,8 @@ using namespace std;
 \returns location of key if found or -1 if not found
 */
 int linearSearch(auto data, auto key);//prototype
+void selectionSort(auto& Data);
+void displayData(auto& info);
 
 
 int main()
