@@ -65,6 +65,9 @@ int main()
 
    cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
+
+	selectionSort(inputs);
+	displayData(inputs);
     return 0;
 }
 
@@ -87,3 +90,11 @@ if (minIndex != i)
 } //end if
 } //end outer loop
 } //end function
+
+void displayData(auto& info)
+{
+	for (size_t i = 0; i < info.size(); i++)
+	{
+		std::cout << info[i] << " ";
+	}
+}
