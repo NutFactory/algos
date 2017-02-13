@@ -72,7 +72,15 @@ int main()
 	displayData(inputs);
     return 0;
 }
-
+int linearSearch(auto data, auto key)
+{
+	for (int i=0; 1 < data.size(); i++)
+	{
+		if(data[i] == key){
+			return i;
+		}
+	}
+}
 void selectionSort(auto& Data)
 {
 	int passes = 0;
